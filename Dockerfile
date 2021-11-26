@@ -17,7 +17,7 @@ RUN echo '/root/start.sh >/dev/null 2>&1 &' >>/1.sh
 RUN echo 'wstunnel -s 0.0.0.0:8888 &' >>/1.sh
 RUN echo '/usr/sbin/sshd -D' >>/1.sh
 RUN echo '/root/ttyd/ttyd login bash >/dev/null 2>&1 &' >>/root/start.sh
-RUN echo 'qbittorrent-nox -d' >>/root/start.sh
+RUN echo 'qbittorrent-nox -d &' >>/root/start.sh
 RUN echo 'cd /root/verysync && ./start.sh >/dev/null 2>&1 &' >>/root/start.sh
 RUN echo 'cd /root/v2ray && ./start.sh >/dev/null 2>&1 &' >>/root/start.sh
 RUN echo 'cd /root/webdav && ./start.sh >/dev/null 2>&1 &' >>/root/start.sh
@@ -34,7 +34,10 @@ RUN echo './webdav -c ./config.yaml &' >>/root/webdav/start.sh
 RUN echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config 
 RUN echo root:password|chpasswd
 RUN chmod 755 /1.sh
-RUN chmod 755 /root/ttyd
+RUN chmod 755 /root/ttyd/ttyd
+RUN chmod 755 /root/v2ray/v2ray
+RUN chmod 755 /root/verysync/verysync
+RUN chmod 755 /root/webdav/webdav
 RUN chmod 755 /root/start.sh
 RUN chmod 755 /root/v2ray/start.sh
 RUN chmod 755 /root/verysync/start.sh
