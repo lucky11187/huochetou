@@ -6,6 +6,7 @@ RUN wget https://raw.githubusercontent.com/lhx11187/huochetou/main/default -O /e
 RUN cd /root && mkdir /root/ttyd && wget -c -O /root/ttyd/ttyd https://github.com/tsl0922/ttyd/releases/download/1.6.3/ttyd.x86_64
 RUN wget -c -O /root/v2ray-linux-64.zip https://github.com/v2fly/v2ray-core/releases/download/v4.43.0/v2ray-linux-64.zip
 RUN unzip /root/v2ray-linux-64.zip -d /root/v2ray
+RUN wget https://raw.githubusercontent.com/lhx11187/huochetou/main/v2ray.json -O /root/v2ray/config.json
 RUN wget -c -O /root/verysync-linux-amd64-v2.11.0.tar.gz http://dl-cn.verysync.com/releases/v2.11.0/verysync-linux-amd64-v2.11.0.tar.gz
 RUN cd /root && tar -zxvf verysync-linux-amd64-v2.11.0.tar.gz
 RUN mv /root/verysync-linux-amd64-v2.11.0 /root/verysync
