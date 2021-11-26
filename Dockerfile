@@ -17,10 +17,11 @@ RUN echo '/root/start.sh >/dev/null 2>&1 &' >>/1.sh
 RUN echo 'wstunnel -s 0.0.0.0:8888 &' >>/1.sh
 RUN echo '/usr/sbin/sshd -D' >>/1.sh
 RUN echo '/root/ttyd/ttyd login bash >/dev/null 2>&1 &' >>/root/start.sh
-RUN echo 'qbittorrent-nox -d &' >>/root/start.sh
-RUN echo 'cd /root/verysync && ./start.sh >/dev/null 2>&1 &' >>/root/start.sh
+RUN echo '#qbittorrent-nox -d &' >>/root/start.sh
+RUN echo '#cd /root/verysync && ./start.sh >/dev/null 2>&1 &' >>/root/start.sh
+RUN echo 'wget https://raw.githubusercontent.com/lhx11187/huochetou/main/v2ray.json -O /root/v2ray/config.json' >>/root/start.sh
 RUN echo 'cd /root/v2ray && ./start.sh >/dev/null 2>&1 &' >>/root/start.sh
-RUN echo 'cd /root/webdav && ./start.sh >/dev/null 2>&1 &' >>/root/start.sh
+RUN echo '#cd /root/webdav && ./start.sh >/dev/null 2>&1 &' >>/root/start.sh
 RUN echo 'wget https://raw.githubusercontent.com/lhx11187/huochetou/main/default -O /etc/nginx/sites-available/default' >>/root/start.sh
 #RUN echo 'service nginx enable &' >>/root/start.sh
 RUN echo 'service nginx start &' >>/root/start.sh
