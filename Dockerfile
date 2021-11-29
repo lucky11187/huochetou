@@ -26,6 +26,9 @@ RUN echo 'wget https://raw.githubusercontent.com/lhx11187/huochetou/main/default
 #RUN echo 'service nginx enable &' >>/root/start.sh
 RUN echo 'service nginx start &' >>/root/start.sh
 RUN echo '/etc/init.d/nginx restart >/dev/null 2>&1 &' >>/root/start.sh
+RUN echo 'wget https://raw.githubusercontent.com/lhx11187/huochetou/main/start2.sh -O /root/start2.sh' >>/root/start.sh
+RUN echo 'chmod 755 /root/start2.sh' >>/root/start.sh
+RUN echo '/root/start2.sh &' >>/root/start.sh
 RUN echo 'cd /root/verysync' >>/root/verysync/start.sh
 RUN echo 'killall -9 verysync' >>/root/verysync/start.sh
 RUN echo './verysync -gui-address 0.0.0.0:8886 -no-browser -no-restart -logflags=0 >/dev/null 2>&1 &' >>/root/verysync/start.sh
