@@ -2,6 +2,8 @@
 
 #killall -9 qbittorrent-nox
 #killall -9 verysync 
+#killall -9 filebrowser 
+#service nginx restart 
 
 mkdir /root/filebrowser &
 wget -c -O /root/linux-amd64-filebrowser.tar.gz https://github.com/filebrowser/filebrowser/releases/download/v2.19.0/linux-amd64-filebrowser.tar.gz
