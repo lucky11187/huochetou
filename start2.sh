@@ -16,7 +16,7 @@ cd /root && tar -zxvf /root/frp_0.38.0_linux_amd64.tar.gz
 mv /root/frp_0.38.0_linux_amd64 /root/frp
 wget -c -O /root/frp/www.tcpfile.com.ini https://raw.githubusercontent.com/lhx11187/huochetou/main/www.tcpfile.com.ini
 chmod 755 /root/frp/frpc
-cd /root/frp && ./frpc -c ./www.tcpfile.com.ini >/dev/null 2>&1 &
+#cd /root/frp && ./frpc -c ./www.tcpfile.com.ini >/dev/null 2>&1 &
 
 
 
